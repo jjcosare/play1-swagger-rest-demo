@@ -21,11 +21,12 @@ placed in the folder `/public/swagger` and, after running the project, available
 
 This SwaggerObject is based on the official 
 [Swagger 2.0 specs](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#swagger-object). 
-Only a small part of the spec is implemented, but it already produces a nice RESR client.
+Only a small part of the spec is implemented, but it already produces a nice REST client.
 
 ## Get it running
 
-To get it running, clone this repository and execute Play's `run` command:
+Assuming you have `play 1.2.x` in your PATH, to get it running, clone this repository and 
+execute Play's `run` command:
 
 ```
 git clone https://github.com/bkiers/play1-swagger-rest-demo
@@ -37,3 +38,8 @@ Then open a browser and point it to [localhost:9000/swagger](http://localhost:90
 should see something like this:
 
 ![swagger](https://raw.githubusercontent.com/bkiers/play1-swagger-rest-demo/master/static/swagger.png)
+
+## IDE
+
+To integrate the project in your IDE, cd into the project and execute either `play idealize` or, if 
+you must, `play eclipsify` :)
