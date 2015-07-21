@@ -1,0 +1,7 @@
+build/
+production/
+test-result/
+tmp/
+
+*.iml
+*.ipr

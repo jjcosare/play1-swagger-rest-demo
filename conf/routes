@@ -1,0 +1,7 @@
+
+GET       /swagger/json        Swagger.json
+GET       /swagger             staticFile:/public/swagger/index.html
+
+GET       /public/             staticDir:public
+
+GET       /favicon.ico         404
