@@ -5,6 +5,7 @@ import models.User;
 import play.mvc.Controller;
 import swagger.annotations.*;
 
+import java.io.File;
 import java.util.*;
 
 @Api(path = "/users", description = "API for User objects.")
@@ -82,6 +83,29 @@ public class UserApi extends Controller {
 
     users.put(user.id, user);
     renderJSON(user);
+  }
+
+  @POST(
+      path = "/{id}/photo",
+      summary = "Add user photo",
+      responses = {
+            @Response(statusCode = 200, description = "When the photo was successfully added"),
+            @Response(statusCode = 404, description = "When there is no user with the provided id")
+      }
+  )
+  public static void addUserPhoto(@Path(name = "id", description = "The id of the user") Integer id,
+                                  @Body(name = "photo", description = "The photo of the user") File photo,
+                                  @Body(name = "dateTaken", description = "The date of the photo was taken") Date dateTaken) {
+
+      User user = users.get(id);
+
+      if (user == null) {
+        response.status = 404;
+        renderText("No user found with id: " + id);
+      }
+
+      user.photo = photo;
+      renderJSON(user);
   }
 
   @DELETE(
