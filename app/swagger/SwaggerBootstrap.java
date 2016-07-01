@@ -37,7 +37,7 @@ public class SwaggerBootstrap extends Job {
 
     Logger.info("First request, running SwaggerBootstrap#doJob()");
 
-    swaggerObject = new SwaggerObject(new InfoObject("Play 1 REST API demo", "0.1"), "localhost:9000", "/api");
+    swaggerObject = new SwaggerObject(new InfoObject("Play 1 REST API demo", "0.1"), Router.getBaseUrl(), "/");
 
     // Find all files annotated with 'Api'.
     List<ApplicationClasses.ApplicationClass> annotatedClasses = Play.classes.getAnnotatedClasses(Api.class);
